@@ -1,9 +1,11 @@
-'use strict';
+"use strict";
 
 /**
  * catering-category controller
  */
+console.log("test");
+const { createCoreController } = require("@strapi/strapi").factories;
 
-const { createCoreController } = require('@strapi/strapi').factories;
-
-module.exports = createCoreController('api::catering-category.catering-category');
+module.exports = createCoreController(
+  "api::catering-category.catering-category"
+);
