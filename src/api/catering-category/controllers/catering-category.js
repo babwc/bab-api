@@ -3,6 +3,7 @@
 /**
  * catering-category controller
  */
+console.log("test");
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController(
