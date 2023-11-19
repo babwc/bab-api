@@ -38,7 +38,7 @@
       "type": "text",
       "required": true
     },
-    "products": {
+    "modifiers": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
