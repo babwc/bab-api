@@ -1,5 +1,12 @@
-module.exports = [
+module.exports = ({ env }) => [
   "strapi::errors",
+  "strapi::cors",
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::favicon",
+  "strapi::public",
   {
     name: "strapi::security",
     config: {
@@ -11,27 +18,17 @@ module.exports = [
             "'self'",
             "data:",
             "blob:",
-            "dl.airtable.com",
-            "*.digitaloceanspaces.com",
+            `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
           ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
-            "dl.airtable.com",
-            "*.digitaloceanspaces.com",
+            `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
           ],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  "strapi::cors",
-  "strapi::poweredBy",
-  "strapi::logger",
-  "strapi::query",
-  "strapi::body",
-  "strapi::session",
-  "strapi::favicon",
-  "strapi::public",
 ];
