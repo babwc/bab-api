@@ -12,7 +12,7 @@ module.exports = ({ env }) => ({
   // },
   upload: {
     config: {
-      provider: "strapi/provider-upload-aws-s3",
+      provider: "@strapi/provider-upload-aws-s3",
       providerOptions: {
         accessKeyId: env("DO_SPACE_ACCESS_KEY"),
         secretAccessKey: env("DO_SPACE_SECRET_KEY"),
