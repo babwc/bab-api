@@ -9,7 +9,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController(
   "api::catering.catering",
   ({ strapi }) => ({
-    async sendMessage(ctx) {
+    async send(ctx) {
       try {
         await strapi.plugins["email"].services.email.send({
           to: process.env.EMAIL,
