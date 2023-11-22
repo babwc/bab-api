@@ -895,9 +895,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
     uid: Attribute.UID & Attribute.Required;
     title: Attribute.String & Attribute.Required;
     inStock: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    amount: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
-    price: Attribute.Decimal & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    amount: Attribute.Integer & Attribute.DefaultTo<0>;
+    price: Attribute.Decimal;
+    description: Attribute.Text;
     modifiers: Attribute.Relation<
       'api::product.product',
       'oneToMany',

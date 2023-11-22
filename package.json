@@ -23,6 +23,7 @@
     "react-router-dom": "5.3.4",
     "strapi-provider-upload-do": "^3.6.9",
     "strapi-provider-upload-dos": "^4.0.5",
+    "stripe": "^14.5.0",
     "styled-components": "5.3.3"
   },
   "author": {
