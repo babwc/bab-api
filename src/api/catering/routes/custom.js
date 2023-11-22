@@ -1,7 +1,7 @@
 module.exports = {
   routes: [
     {
-      method: "PUT",
+      method: "POST",
       path: "/caterings/send",
       handler: "catering.send",
       config: {
