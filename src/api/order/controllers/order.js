@@ -80,7 +80,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
     if (!session) return { success: false };
 
-    const { name, phone, email } = session.customer_details;
+    const { name, phone, email, date } = session.customer_details;
 
     if (session.payment_status === "paid" && session.status === "complete") {
       try {
@@ -119,6 +119,10 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
                 <div style="padding: 10px 0;">
                   <h3 style="margin: 0;">Email:</h3>
                   <h4 style="margin: 0; color: #ccc;">${email}</h4>
+                </div>
+                <div style="padding: 10px 0;">
+                  <h3 style="margin: 0;">Pick up date:</h3>
+                  <h4 style="margin: 0; color: #ccc;">${date}</h4>
                 </div>
               </div>
 
