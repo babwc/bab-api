@@ -85,8 +85,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     if (session.payment_status === "paid" && session.status === "complete") {
       try {
         await strapi.plugins["email"].services.email.send({
-          to: "nericx96@gmail.com",
-          from: "admin@babushkamarket.com",
+          to: process.env.EMAIL,
+          from: process.env.EMAIL_ADMIN,
           subject: "NEW ORDER",
           html: `
             <div>
