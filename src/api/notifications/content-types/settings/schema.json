@@ -1,9 +1,9 @@
 {
   "kind": "singleType",
-  "collectionName": "notification",
+  "collectionName": "notifs",
   "info": {
     "singularName": "notification",
-    "pluralName": "notifications",
+    "pluralName": "notifs",
     "displayName": "Notifications"
   },
   "options": {
