@@ -5,7 +5,7 @@ module.exports = ({ env }) => [
     config: {
       enabled: true,
       // headers: "*",
-      origin: [`${env("CLIENT")}`],
+      origin: [`${env("CLIENT")}`, `${env("URL")}`],
     },
   },
   "strapi::poweredBy",
