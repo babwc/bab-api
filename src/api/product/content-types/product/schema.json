@@ -44,7 +44,9 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "department": {
       "type": "relation",
@@ -65,6 +67,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product.product"
+    },
+    "discount": {
+      "type": "decimal",
+      "default": 0,
+      "required": true,
+      "max": 99
     }
   }
 }

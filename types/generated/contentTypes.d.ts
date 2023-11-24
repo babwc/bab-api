@@ -841,6 +841,41 @@ export interface ApiMenuItemMenuItem extends Schema.CollectionType {
   };
 }
 
+export interface ApiNotificationNotification extends Schema.SingleType {
+  collectionName: 'notifications';
+  info: {
+    singularName: 'notification';
+    pluralName: 'notifications';
+    displayName: 'Notification';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    isNotifOn: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    message: Attribute.Text;
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::notification.notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::notification.notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOrderOrder extends Schema.CollectionType {
   collectionName: 'orders';
   info: {
@@ -918,6 +953,12 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToOne',
       'api::product.product'
     >;
+    discount: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        max: 99;
+      }> &
+      Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -990,6 +1031,7 @@ declare module '@strapi/types' {
       'api::department.department': ApiDepartmentDepartment;
       'api::dish.dish': ApiDishDish;
       'api::menu-item.menu-item': ApiMenuItemMenuItem;
+      'api::notification.notification': ApiNotificationNotification;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::settings.settings': ApiSettingsSettings;

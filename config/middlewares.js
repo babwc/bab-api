@@ -8,7 +8,7 @@ module.exports = ({ env }) => [
     config: {
       enabled: true,
       headers: "*",
-      origin: [`${env("CLIENT")}`, "http://localhost:1337"],
+      origin: [`${env("CLIENT")}`],
     },
   },
   "strapi::logger",
